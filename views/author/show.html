@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{title}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/css/skeleton.css">
+  <link rel="icon" type="image/png" href="/css/icon.png">
+</head>
+<body>
+  <div>
+    <div class="row">
+     <div class="eleven column" style="margin-top: 10%">
+       <h2>{{title}}</h2>
+       <form action="/author/search" method="post">
+        <input type="text" list='suggestions' name="author_key_value">
+        <datalist id="suggestions">
+          {{#suggestions}}
+          <option value="{{sugg_name}}">{{sugg_name}}</option>
+          <option value="{{sugg_nationality}}">{{sugg_nationality}}</option>
+          <option value="{{sugg_field}}">{{sugg_field}}</option>
+          {{/suggestions}}
+        </datalist>
+        <input class="button-primary" type="submit" value="Search">
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Nationality</th>
+            <th>Birth</th>
+            <th>Field</th>
+            <!--<th>Books</th>-->
+          </tr>
+        </thead><tbody>
+          {{#authors}}
+          <tr><td><a href="/author/{{author_id}}"/>{{author_name}}</a></td>
+            <td>{{author_nationality}}</td>
+            <td>{{author_birth_year}}</td>
+            <td>{{author_fields}}</td>
+            <!--<td><ul>{{#books}}
+              <li><a href="/book/{{book_id}}">{{book_title}}</a></li>
+            {{/books}}</ul></td>-->
+          </tr>
+          {{/authors}}</tbody>
+        </table>
+      </div>
+    </div>
+    <a class="button button-primary" href="/author">Back</a>
+  </div>
+</body>

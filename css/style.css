@@ -1,0 +1,49 @@
+    table {
+      font-family: "Lucida Console", "Courier New", monospace;
+      border-collapse: collapse;
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+
+    div {
+      display: inline-block;
+      position: relative;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      vertical-align: top;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .same-row{
+      display: flex;
+      flex-direction: row;
+      align-self: flex-end;
+      justify-content: flex-start;
+      width:100%;
+    }
+
+    [type="checkbox"]+ label {
+      display: inline-block;
+      margin-left: 0.5em;
+      margin-right: 2em;
+      line-height: 1em;
+    }
+
+    [type="radio"]+ label {
+      display: inline-block;
+      margin-left: 0.5em;
+      margin-right: 2em;
+      line-height: 1em;
+    }
